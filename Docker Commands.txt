@@ -1,0 +1,47 @@
+docker 
+docker -v
+
+inside docker file
+FROM python:3.11-alpine
+COPY . app
+WORKDIR /app
+RUN pip install -r requirements.txt
+CMD python app.py
+
+
+To build images
+docker build -t welcome-app .
+
+to see docker images
+docker images
+
+to run docker image
+docker run -p 5000:5000 welcome-app
+
+to see running docker images
+docker ps
+
+to stop running instance 
+docker stop containerID
+
+docker login
+
+to delete image
+docker image rm -f welcome-app
+
+always build in this format 
+docker build -t hrishikeshkini/welcome_app .
+
+renaming images
+docker tag hrishikeshkini/welcome_app hrishikeshkini/welcome_app1
+
+push images to dockerhub
+docker push hrishikeshkini/welcome_app:latest
+
+pull images from docker hub
+docker pull hrishikeshkini/welcome_app
+
+run images
+docker run -d -p 5000:5000 hrishikeshkini/welcome_app:latest   (detach mode)
+
+
